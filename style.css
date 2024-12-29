@@ -1,38 +1,43 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-body{
+
+body {
     width: 100%;
     height: 100%;
     background-color: rgb(27, 33, 41);
 }
-.container{
+
+.container {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
-    gap:20px;
+    gap: 20px;
     padding-top: 100px;
     flex-direction: column;
+    text-align: center;
 }
-.container h1{
+
+.container h1 {
     display: inline-block;
     font-size: 7vw;
-    background: linear-gradient(to right,white,rgb(45, 183, 225) ,rgb(196, 14, 93));
+    background: linear-gradient(to right, white, rgb(45, 183, 225), rgb(196, 14, 93));
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.container h2{
+
+.container h2 {
     font-size: 3vw;
     color: rgb(241, 241, 241);
 }
-.prompt-area{
+
+.prompt-area {
     width: 100%;
-    height:120px;
+    height: 120px;
     background-color: rgb(27, 33, 41);
     position: fixed;
     bottom: 0;
@@ -41,83 +46,152 @@ body{
     justify-content: center;
     z-index: 2;
 }
-.prompt{
+
+.prompt {
     width: 60%;
     height: 55%;
     padding: 20px;
     border-radius: 30px 0px 0px 30px;
     background-color: rgba(240, 248, 255, 0.388);
     border: 2px solid rgb(56, 78, 84);
-    border-right:none;
-    outline:none;
-    box-shadow: inset 2px 2px 10px rgb(0, 0, 0),inset -2px -4px 10px black,inset -2px -4px 10px black;
+    border-right: none;
+    outline: none;
+    box-shadow: inset 2px 2px 10px rgb(0, 0, 0), inset -2px -4px 10px black;
     font-size: 18px;
-    color:white
+    color: white;
 }
-.btn{
+
+.btn {
     border: none;
     width: 10%;
     height: 55%;
     background-color: rgb(10, 183, 235);
-  
     border-radius: 0px 30px 30px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid rgb(56, 78, 84);
-    border-left:none;
+    border-left: none;
     cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: rgba(14, 122, 155, 0.728);
 }
-.chat-container{
+
+.chat-container {
     width: 100%;
     max-height: calc(100vh - 120px);
     overflow-y: auto;
     padding: 20px;
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
 }
-.user-chat-box{
+
+.user-chat-box {
     width: 70%;
     padding: 20px;
     background-color: rgb(96, 136, 173);
     display: flex;
-
-    gap:20px;
+    gap: 20px;
     border-radius: 30px 30px 0px 30px;
     color: rgba(255, 255, 255, 0.758);
     font-size: 20px;
     box-shadow: 2px 4px 10px black;
 }
-#img{
- width: 100px;
- height: 100%;
+
+#img {
+    width: 100px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
-#img img{
+
+#img img {
     width: 50px;
     height: 50px;
     filter: drop-shadow(2px 2px 10px black);
 }
-.ai-chat-box{
+
+.ai-chat-box {
     width: 70%;
     padding: 20px;
     background-color: rgba(120, 169, 215, 0.276);
     display: flex;
-    gap:20px;
- 
+    gap: 20px;
     border-radius: 30px 30px 30px 0px;
     color: rgba(255, 255, 255, 0.758);
     font-size: 20px;
     box-shadow: 2px 4px 10px black;
 }
-.loading{
+
+.loading {
     filter: drop-shadow(2px 2px 2px black);
+}
+
+/* Mobile-specific Styles */
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 10vw; /* Adjust font size for mobile */
+    }
+
+    .container h2 {
+        font-size: 5vw;
+    }
+
+    .prompt {
+        width: 80%; /* Adjust input width for smaller screens */
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 20%;
+    }
+
+    .chat-container {
+        padding: 10px;
+    }
+
+    .user-chat-box, .ai-chat-box {
+        width: 90%; /* Ensure chat boxes take up more width on small screens */
+        font-size: 16px; /* Smaller font size */
+    }
+
+    #img {
+        width: 80px; /* Smaller image size */
+    }
+
+    #img img {
+        width: 40px; /* Smaller image size */
+    }
+
+    .container {
+        padding-top: 50px; /* Reduce padding for mobile screens */
+    }
+}
+
+/* Very small screen adjustment (e.g., phones) */
+@media (max-width: 480px) {
+    .prompt {
+        width: 90%; /* Full width on very small screens */
+    }
+
+    .container h1 {
+        font-size: 12vw;
+    }
+
+    .container h2 {
+        font-size: 6vw;
+    }
+
+    .user-chat-box, .ai-chat-box {
+        width: 95%; /* Even wider chat boxes */
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 25%; /* Adjust button size */
+    }
 }
